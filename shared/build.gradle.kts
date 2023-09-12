@@ -5,8 +5,12 @@ plugins {
 kotlin {
     applyDefaultHierarchyTemplate()
     js(IR) {
-        browser()
         binaries.executable()
+        browser {
+            commonWebpackConfig {
+                outputFileName = "tokir-app.js"
+            }
+        }
     }
 
     sourceSets {

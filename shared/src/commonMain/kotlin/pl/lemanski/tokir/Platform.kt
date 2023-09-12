@@ -1,7 +1,6 @@
 package pl.lemanski.tokir
 
-expect val platform: String
-
-class Greeting {
-    fun greeting() = "Hello, $platform!"
+@JsName("generateComposeIcon")
+fun generateComposeIcon() {
+    println("Hello from shared!")
 }
