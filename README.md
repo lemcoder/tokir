@@ -1,0 +1,1 @@
+run browser app `./gradlew jsRun` 
