@@ -18,6 +18,8 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation(libs.kotlinx.coroutines)
+                implementation("org.kobjects.ktxml:core:0.2.3")
+
             }
         }
         /* Test source sets */
