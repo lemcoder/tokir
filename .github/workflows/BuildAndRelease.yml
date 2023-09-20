@@ -37,7 +37,7 @@ jobs:
             arguments: jsBrowserWebpack
             build-root-directory: tokir
 
-      -   name: Deploy compose-web sample to GitHub Pages
+      -   name: Deploy to GitHub Pages
           if: success()
           uses: crazy-max/ghaction-github-pages@v3
           with:
