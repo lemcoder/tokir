@@ -20,11 +20,8 @@ class ImageVectorGenerator(
     private val vector: Vector
 ) {
     /**
-     * @return a [FileSpec] representing a Kotlin source file containing the property for this
+     * @return a [String] representing a Kotlin source file containing the property for this
      * programmatic [vector] representation.
-     *
-     * The package name and hence file location of the generated file is:
-     * [PackageNames.MaterialIconsPackage] + [IconTheme.themePackageName].
      */
     fun createFileSpec(): String {
         val builder = StringBuilder()
@@ -42,9 +39,9 @@ class ImageVectorGenerator(
         )
 
         builder.append("val $iconName: ImageVector\n")
-        builder.append("    get() {\n")
+        builder.append("get() {\n")
         builder.append(iconGetterString) // This should already have the appropriate indentation and formatting
-        builder.append("    }\n")
+        builder.append("}\n")
 
         // Assuming the backing property can be added like this
         builder.append("\nprivate var $backingPropertyString: ImageVector? = null\n")
@@ -135,7 +132,7 @@ private fun addPath(path: VectorNode.Path, pathBody: () -> String): String {
         ""
     }
 
-    builder.append("MaterialPath$parameters {\n")
+    builder.append("materialPath$parameters {\n")
     builder.append(pathBody())  // Use the provided pathBody function to inject path-specific code
     builder.append("}\n")
 
